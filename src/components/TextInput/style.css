@@ -1,0 +1,15 @@
+.text-input__root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.text-input__label {
+}
+
+.text-input__input {
+  height: 20px;
+  min-width: 230px;
+  margin: 10px 0px 10px 10px;
+}
