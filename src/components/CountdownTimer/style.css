@@ -1,0 +1,32 @@
+.show-counter {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 4rem;
+  align-items: center;
+  background-color: #00dbde;
+  background-image: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+}
+
+.show-counter .countdown {
+  align-items: center;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.show-counter .countdown.danger {
+  color: #ff0000;
+}
+
+.show-counter .countdown > p {
+  margin: 0;
+}
+
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}

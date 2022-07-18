@@ -1,0 +1,20 @@
+form {
+  position: absolute;
+  z-index: 100;
+  background: white;
+  border-radius: 30px;
+  padding: 40px;
+  right: 40px;
+  top: 40px;
+}
+.form {
+  min-width: 320px;
+  max-width: 540px;
+  width: 100%;
+}
+
+.form-input {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}

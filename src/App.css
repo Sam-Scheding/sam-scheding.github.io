@@ -1,32 +1,64 @@
+/* colors: 
+#F72585;
+#7209B7;
+#3A0CA3;
+#4361EE;
+#4CC9F0; */
+
+/* Typography */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility;
+}
+body {
+  font-family: "Arbutus Slab", Helvetica, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", Georgia, sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 .root {
   text-align: center;
 }
 
+iframe {
+  filter: invert();
+}
 .header {
-  background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #7209b7;
 }
 
-.container {
+.wrapper {
   display: flex;
-  justify-content: center;
-  padding: 10px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-.form {
-  min-width: 320px;
-  max-width: 540px;
-  width: 100%;
+img {
+  height: 400px;
 }
 
-.form-input {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
+.imageWrapper {
+  margin: 20px 0;
 }
 
+.relative {
+  position: relative;
+}
