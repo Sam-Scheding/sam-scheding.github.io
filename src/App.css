@@ -50,7 +50,9 @@ iframe {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
+div[role="button"] {
+  margin: 0 !important;
+}
 img {
   height: 400px;
 }
