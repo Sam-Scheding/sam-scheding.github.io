@@ -1,0 +1,13 @@
+.checkbox__root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.checkbox__input {
+  height: 20px;
+  width: 20px;
+  margin: 0px;
+}
