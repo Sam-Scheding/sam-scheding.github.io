@@ -2,11 +2,22 @@ import { memo } from "react";
 import "./App.css";
 import CountdownTimer from "./components/CountdownTimer";
 import Form from "./components/Form";
-import { pic1, pic2, pic3 } from "./assets";
+import MainHeader from "./components/MainHeader";
+import {
+  pic1,
+  pic2,
+  pic3,
+  circle,
+  lightpainting,
+  ripples,
+  spirals,
+} from "./assets";
 import Lottie from "react-lottie";
 import weddingAnimation from "./assets/wedding-outline.json";
 import patternAnimation from "./assets/pattern.json";
 // www.blobmaker.app/
+
+const pictures = [circle, lightpainting, ripples, spirals];
 
 function App() {
   const getDefaultOptions = (animation) => ({
@@ -19,14 +30,24 @@ function App() {
   });
   return (
     <div className="root">
-      <header className="header">
-        <h1>Mia & Vlad's Wedding</h1>
-      </header>
+      <MainHeader>
+        <h1 class="header">Mia & Vlad's Wedding</h1>
+      </MainHeader>
       <main>
-        <div class="imageWrapper">
-          <img src={pic1} class="left" />
-          <img src={pic2} class="right" />
-          <img src={pic3} class="left" />
+        <div class="linkWrapper">
+          {pictures.map((picture) => (
+            <div class="link">
+              <div
+                style={{
+                  backgroundImage: `url(${picture})`,
+                  backgroundPosition: "center",
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+                class="linkImage"
+              />
+            </div>
+          ))}
         </div>
         <div className="wrapper">
           <iframe
@@ -50,6 +71,11 @@ function App() {
         <Lottie options={getDefaultOptions(patternAnimation)} />
       </div>
       <CountdownTimer />
+      <div class="imageWrapper">
+        <img src={pic1} class="left" />
+        <img src={pic2} class="right" />
+        <img src={pic3} class="left" />
+      </div>
     </div>
   );
 }

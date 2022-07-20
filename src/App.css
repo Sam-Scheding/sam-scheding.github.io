@@ -4,7 +4,6 @@
 #3A0CA3;
 #4361EE;
 #4CC9F0; */
-
 /* Typography */
 html {
   -webkit-text-size-adjust: 100%;
@@ -13,7 +12,7 @@ html {
   text-rendering: optimizelegibility;
 }
 body {
-  font-family: "Arbutus Slab", Helvetica, Arial, sans-serif;
+  font-family: "Polygraph W00 Regular", Helvetica, Arial, sans-serif;
 }
 h1,
 h2,
@@ -21,28 +20,32 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins", Georgia, sans-serif;
+  font-family: "PolygraphW00-Bold", Helvetica, sans-serif;
   /* font-family: 'Source Sans Pro', sans-serif; */
 }
-
 h2 {
   font-size: 2rem;
 }
 
+main {
+  margin-top: 90px;
+}
+
 .root {
   text-align: center;
+  width: 87.5%;
+  max-width: 1260px;
+  margin: 0 auto;
 }
 
 iframe {
   filter: invert();
 }
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #7209b7;
+  margin: 0 0 10px 0;
+  z-index: 2;
+  font-size: 40px;
+  color: white;
 }
 
 .wrapper {
@@ -63,4 +66,43 @@ img {
 
 .relative {
   position: relative;
+}
+.linkWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.link {
+  width: 50%;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.linkImage {
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+.link:hover .linkImage,
+.link:focus .linkImage {
+  transform: scale(1.2);
+}
+.link:hover .linkImage:before,
+.link:focus .linkImage:before {
+  display: block;
+}
+
+.linkImage::before {
+  content: "";
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(52, 73, 94, 0.75);
 }
