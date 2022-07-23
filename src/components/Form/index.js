@@ -6,11 +6,22 @@ import Button from "../Button";
 import emailjs from "emailjs-com";
 
 function Form() {
+  const encodedUserInfo = Object.fromEntries(new URLSearchParams(window.location.search))['u']
+  const userInfo = JSON.parse(window.atob(decodeURIComponent(encodedUserInfo)))
   const [isChecked, setChecked] = useState(false);
+  const [fullName, setFullName] = useState(userInfo['fullName']);
+  const [email, setEmail] = useState(userInfo['email']);
 
   const handleOnChange = useCallback(({ target }) => {
     setChecked(target.checked);
   }, []);
+
+  const handleOnNameChange = ({ target }) => {
+    setFullName(target.value)
+  }
+  const handleOnEmailChange = ({ target }) => {
+    setEmail(target.value)
+  }
 
   const form = useRef();
 
@@ -39,11 +50,21 @@ function Form() {
       <h2>RSVP</h2>
       <p>Kindly reply by October 2022</p>
       <div className="form-input">
-        <TextInput label="Full Name" name="name" />
+        <TextInput 
+          label="Full Name" 
+          name="name"
+          value={fullName}
+          onChange={handleOnNameChange}
+        />
       </div>
 
       <div className="form-input">
-        <TextInput label="Email address" name="email" />
+        <TextInput 
+          label="Email address" 
+          name="email" 
+          value={email}
+          onChange={handleOnEmailChange}
+        />
       </div>
 
       <div className="form-input">

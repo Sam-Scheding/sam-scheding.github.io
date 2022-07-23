@@ -15,7 +15,6 @@ import {
 import Lottie from "react-lottie";
 import weddingAnimation from "../../assets/wedding-outline.json";
 import patternAnimation from "../../assets/pattern.json";
-import { Link } from "react-router-dom";
 // www.blobmaker.app/
 
 const pictures = [circle, lightpainting, ripples, spirals];
