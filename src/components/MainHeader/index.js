@@ -2,8 +2,8 @@ import React from "react";
 import "./index.css";
 
 export const MainHeader = ({ children }) => (
-  <div class="main-header">
-    <div class="main-header__wrap">
+  <div className="main-header">
+    <div className="main-header__wrap">
       {children}
       <svg width="0" height="0">
         <defs>

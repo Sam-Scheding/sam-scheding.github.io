@@ -31,12 +31,12 @@ function App() {
   return (
     <div className="root">
       <MainHeader>
-        <h1 class="header">Mia & Vlad's Wedding</h1>
+        <h1 className="header">Mia & Vlad's Wedding</h1>
       </MainHeader>
       <main>
-        <div class="linkWrapper">
+        <div className="linkWrapper">
           {pictures.map((picture) => (
-            <div class="link">
+            <div className="link" key={picture}>
               <div
                 style={{
                   backgroundImage: `url(${picture})`,
@@ -44,7 +44,7 @@ function App() {
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
                 }}
-                class="linkImage"
+                className="linkImage"
               />
             </div>
           ))}
@@ -71,10 +71,10 @@ function App() {
         <Lottie options={getDefaultOptions(patternAnimation)} />
       </div>
       <CountdownTimer />
-      <div class="imageWrapper">
-        <img src={pic1} class="left" />
-        <img src={pic2} class="right" />
-        <img src={pic3} class="left" />
+      <div className="imageWrapper">
+        <img src={pic1} className="left" />
+        <img src={pic2} className="right" />
+        <img src={pic3} className="left" />
       </div>
     </div>
   );
