@@ -15,6 +15,7 @@ import {
 import Lottie from "react-lottie";
 import weddingAnimation from "../../assets/wedding-outline.json";
 import patternAnimation from "../../assets/pattern.json";
+import { useEffect } from "react";
 // www.blobmaker.app/
 
 const pictures = [circle, lightpainting, ripples, spirals];
@@ -28,6 +29,21 @@ function Home() {
       preserveAspectRatio: "xMidYMid slice",
     },
   });
+
+  useEffect(() => {
+    // Load queryString into localStorage on page load so it can be 
+    // used to populate the form later, even after route changes
+    let userInfo = {}
+    const userURLParam = new URLSearchParams(window.location.search).get('u')
+
+    if(userURLParam) {
+      const base64UserInfo = decodeURIComponent(userURLParam)
+      userInfo = window.atob(base64UserInfo)
+    }
+    
+    window.localStorage.setItem('userInfo', JSON.stringify(userInfo))  
+  }, [])
+
   return (
     <div className="root">
       <MainHeader>

@@ -6,11 +6,13 @@ import Button from "../Button";
 import emailjs from "emailjs-com";
 
 function Form() {
-  const encodedUserInfo = Object.fromEntries(new URLSearchParams(window.location.search))['u']
-  const userInfo = JSON.parse(window.atob(decodeURIComponent(encodedUserInfo)))
+  const userInfo = JSON.parse(window.localStorage.getItem('userInfo'))
+  // TODO: This is broken, since it will overwrite the form values with the localStorage values on every render
+  // But I can't figure out how to actually fix it.
+  
   const [isChecked, setChecked] = useState(false);
-  const [fullName, setFullName] = useState(userInfo['fullName']);
-  const [email, setEmail] = useState(userInfo['email']);
+  const [fullName, setFullName] = useState(userInfo.fullName);
+  const [email, setEmail] = useState(userInfo.email);
 
   const handleOnChange = useCallback(({ target }) => {
     setChecked(target.checked);
