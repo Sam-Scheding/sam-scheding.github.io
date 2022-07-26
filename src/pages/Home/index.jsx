@@ -16,11 +16,11 @@ import Lottie from "react-lottie";
 import weddingAnimation from "../../assets/wedding-outline.json";
 import patternAnimation from "../../assets/pattern.json";
 import { useEffect } from "react";
-// www.blobmaker.app/
+// JAE: www.blobmaker.app/ hi
 
 const pictures = [circle, lightpainting, ripples, spirals];
 
-function Home() {
+const Home = () => {
   const getDefaultOptions = (animation) => ({
     loop: true,
     autoplay: true,
@@ -41,7 +41,7 @@ function Home() {
       userInfo = window.atob(base64UserInfo)
     }
     
-    window.localStorage.setItem('userInfo', JSON.stringify(userInfo))  
+    window.localStorage.setItem('userInfo', userInfo)
   }, [])
 
   return (
@@ -96,4 +96,4 @@ function Home() {
   );
 }
 
-export default memo(Home);
+export default Home;

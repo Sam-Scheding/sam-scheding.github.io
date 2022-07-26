@@ -8,7 +8,7 @@ export default function TextInput({
   name,
   inputRef,
   onChange,
-  value,
+  defaultValue,
 }) {
 
   return (
@@ -24,7 +24,7 @@ export default function TextInput({
         ref={inputRef}
         required={isRequired}
         name={name}
-        value={value}
+        defaultValue={defaultValue}
       />
     </div>
   );

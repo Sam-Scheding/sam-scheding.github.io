@@ -1,18 +1,24 @@
-import { useState, memo, useCallback, useRef } from "react";
+import { useState, memo, useCallback, useRef, useEffect } from "react";
 import "./style.css";
 import TextInput from "../TextInput";
 import Checkbox from "../Checkbox";
 import Button from "../Button";
 import emailjs from "emailjs-com";
 
-function Form() {
-  const userInfo = JSON.parse(window.localStorage.getItem('userInfo'))
-  // TODO: This is broken, since it will overwrite the form values with the localStorage values on every render
-  // But I can't figure out how to actually fix it.
-  
+const Form = () => {
   const [isChecked, setChecked] = useState(false);
-  const [fullName, setFullName] = useState(userInfo.fullName);
-  const [email, setEmail] = useState(userInfo.email);
+  const [fullName, setFullName] = useState();
+  const [email, setEmail] = useState();
+
+  useEffect(() => {
+    let userInfo = window.localStorage.getItem('userInfo');
+    userInfo = JSON.parse(userInfo);
+  
+    if(userInfo) {
+      setFullName(userInfo.fullName);
+      setEmail(userInfo.email)
+    }
+  }, [])
 
   const handleOnChange = useCallback(({ target }) => {
     setChecked(target.checked);
@@ -55,7 +61,7 @@ function Form() {
         <TextInput 
           label="Full Name" 
           name="name"
-          value={fullName}
+          defaultValue={fullName}
           onChange={handleOnNameChange}
         />
       </div>
@@ -64,7 +70,7 @@ function Form() {
         <TextInput 
           label="Email address" 
           name="email" 
-          value={email}
+          defaultValue={email}
           onChange={handleOnEmailChange}
         />
       </div>
@@ -94,4 +100,4 @@ function Form() {
   );
 }
 
-export default memo(Form);
+export default Form;
