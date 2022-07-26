@@ -1,16 +1,35 @@
-import { useState, memo, useCallback, useRef } from "react";
+import { useState, memo, useCallback, useRef, useEffect } from "react";
 import "./style.css";
 import TextInput from "../TextInput";
 import Checkbox from "../Checkbox";
 import Button from "../Button";
 import emailjs from "emailjs-com";
 
-function Form() {
+const Form = () => {
   const [isChecked, setChecked] = useState(false);
+  const [fullName, setFullName] = useState();
+  const [email, setEmail] = useState();
+
+  useEffect(() => {
+    let userInfo = window.localStorage.getItem('userInfo');
+    userInfo = JSON.parse(userInfo);
+  
+    if(userInfo) {
+      setFullName(userInfo.fullName);
+      setEmail(userInfo.email)
+    }
+  }, [])
 
   const handleOnChange = useCallback(({ target }) => {
     setChecked(target.checked);
   }, []);
+
+  const handleOnNameChange = ({ target }) => {
+    setFullName(target.value)
+  }
+  const handleOnEmailChange = ({ target }) => {
+    setEmail(target.value)
+  }
 
   const form = useRef();
 
@@ -39,11 +58,21 @@ function Form() {
       <h2>RSVP</h2>
       <p>Kindly reply by October 2022</p>
       <div className="form-input">
-        <TextInput label="Full Name" name="name" />
+        <TextInput 
+          label="Full Name" 
+          name="name"
+          defaultValue={fullName}
+          onChange={handleOnNameChange}
+        />
       </div>
 
       <div className="form-input">
-        <TextInput label="Email address" name="email" />
+        <TextInput 
+          label="Email address" 
+          name="email" 
+          defaultValue={email}
+          onChange={handleOnEmailChange}
+        />
       </div>
 
       <div className="form-input">
@@ -71,4 +100,4 @@ function Form() {
   );
 }
 
-export default memo(Form);
+export default Form;

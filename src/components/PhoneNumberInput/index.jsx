@@ -8,9 +8,9 @@ export default function TextInput({
   name,
   inputRef,
   onChange,
-  defaultValue,
+  value,
+  pattern = '',
 }) {
-
   return (
     <div className="text-input__root">
       <label htmlFor={name} className="text-input__label">
@@ -18,13 +18,14 @@ export default function TextInput({
       </label>
       <input
         onChange={onChange}
+        pattern={pattern}
         className="text-input__input"
         placeholder={placeholder}
-        type="text"
+        type="tel"
         ref={inputRef}
         required={isRequired}
         name={name}
-        defaultValue={defaultValue}
+        value={value}
       />
     </div>
   );
