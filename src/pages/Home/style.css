@@ -79,6 +79,7 @@ img {
   height: 300px;
   overflow: hidden;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .linkImage {

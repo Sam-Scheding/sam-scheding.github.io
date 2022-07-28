@@ -16,9 +16,31 @@ import Lottie from "react-lottie";
 import weddingAnimation from "../../assets/wedding-outline.json";
 import patternAnimation from "../../assets/pattern.json";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 // JAE: www.blobmaker.app/ hi
 
-const pictures = [circle, lightpainting, ripples, spirals];
+const pictures = [
+  {
+    src: circle,
+    url: '/tickets',
+    label: 'TICKETS',
+  }, 
+  {
+    src: lightpainting,
+    url: '/location',
+    label: 'LOCATION',
+  }, 
+  {
+    src: ripples,
+    url: '/faq',
+    label: 'FAQ',
+  }, 
+  {
+    src: spirals,
+    url: '/contact',
+    label: 'CONTACT',
+  },
+];
 
 const Home = () => {
   const getDefaultOptions = (animation) => ({
@@ -33,14 +55,14 @@ const Home = () => {
   useEffect(() => {
     // Load queryString into localStorage on page load so it can be 
     // used to populate the form later, even after route changes
-    let userInfo = {}
+    let userInfo = JSON.stringify({})
     const userURLParam = new URLSearchParams(window.location.search).get('u')
 
     if(userURLParam) {
       const base64UserInfo = decodeURIComponent(userURLParam)
       userInfo = window.atob(base64UserInfo)
     }
-    
+  
     window.localStorage.setItem('userInfo', userInfo)
   }, [])
 
@@ -51,18 +73,30 @@ const Home = () => {
       </MainHeader>
       <main>
         <div className="linkWrapper">
-          {pictures.map((picture) => (
-              <div className="link" key={picture}>
+          {pictures.map(({ src, url, label }) => (
+              <Link 
+                className="link" 
+                key={url}
+                to={url}
+              >
                 <div
                   style={{
-                    backgroundImage: `url(${picture})`,
+                    backgroundImage: `url(${src})`,
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
+                    fontSize: '60pt',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    fontWeight: '900',
                   }}
                   className="linkImage"
-                />
-              </div>
+                >
+                  { label }
+                </div>
+              </Link>
           ))}
         </div>
         <div className="wrapper">
@@ -83,7 +117,6 @@ const Home = () => {
         </div>
       </main>
       <div className="relative">
-        <Form />
         <Lottie options={getDefaultOptions(patternAnimation)} />
       </div>
       <CountdownTimer />
