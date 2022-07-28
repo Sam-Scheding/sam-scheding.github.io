@@ -1,7 +1,7 @@
 import Form from "../../components/Form";
 import "./style.css";
 import {
-  ripples,
+  circle,
 } from "../../assets";
 
 const Tickets = () => {
@@ -13,7 +13,7 @@ const Tickets = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-        backgroundImage: `url(${ripples})`,
+        backgroundImage: `url(${circle})`,
       }}
     >
       <Form></Form>
