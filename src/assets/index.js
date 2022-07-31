@@ -5,4 +5,16 @@ import circle from "./circle.jpg";
 import lightpainting from "./lightpainting.jpg";
 import ripples from "./ripples.jpg";
 import spirals from "./spirals.jpg";
-export { pic1, pic2, pic3, circle, lightpainting, ripples, spirals };
+import psychadelic from "./psychadelic.jpg";
+import psytrance from "./psytrance.jpg";
+export {
+  pic1,
+  pic2,
+  pic3,
+  circle,
+  lightpainting,
+  ripples,
+  spirals,
+  psychadelic,
+  psytrance,
+};

@@ -1,0 +1,26 @@
+.header {
+  margin: 0 0 10px 0;
+  z-index: 2;
+  font-size: 40px;
+  color: white;
+  transition: all 0.5s;
+}
+.header:hover {
+  color: #9cf;
+}
+
+.appWrapper {
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% auto;
+  min-height: 100vh; */
+
+.pageWrapper {
+  padding-top: 80px;
+}

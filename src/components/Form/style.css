@@ -4,9 +4,11 @@
   border-radius: 30px;
   padding: 40px;
   right: 40px;
-  top: 40px;  min-width: 320px;
+  top: 40px;
+  min-width: 320px;
   max-width: 540px;
   width: 100%;
+  text-transform: uppercase;
 }
 
 .form-input {

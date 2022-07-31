@@ -1,0 +1,8 @@
+iframe {
+  filter: invert();
+}
+
+.locationWrapper {
+  display: flex;
+  justify-content: center;
+}

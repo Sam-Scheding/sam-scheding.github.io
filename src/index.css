@@ -135,3 +135,27 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizelegibility;
+}
+body,
+p {
+  font-family: "Polygraph W00 Regular", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "PolygraphW00-Bold", Helvetica, sans-serif;
+  /* font-family: 'Source Sans Pro', sans-serif; */
+}
+h2 {
+  font-size: 3rem;
+}
