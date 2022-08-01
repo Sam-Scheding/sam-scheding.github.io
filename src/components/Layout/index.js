@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <MainHeader>
         <h1 className="header">Mia & Vlad's Wedding</h1>
       </MainHeader>
-      <div className="pageWrapper">{children}</div>
+      {children}
       {/* <Footer /> */}
     </div>
   );

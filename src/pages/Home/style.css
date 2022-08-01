@@ -20,6 +20,7 @@ div[role="button"] {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding-bottom: 80px;
 }
 
 img {
@@ -35,6 +36,7 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 24px;
+  padding-top: 80px;
 }
 
 .link {

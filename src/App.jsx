@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import Location from "./pages/Location";
 import Layout from "./components/Layout";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/location" element={<Location />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
     </Router>

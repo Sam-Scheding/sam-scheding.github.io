@@ -43,15 +43,6 @@ const pictures = [
 ];
 
 const Home = () => {
-  const getDefaultOptions = (animation) => ({
-    loop: true,
-    autoplay: true,
-    animationData: animation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  });
-
   useEffect(() => {
     // Load queryString into localStorage on page load so it can be
     // used to populate the form later, even after route changes
