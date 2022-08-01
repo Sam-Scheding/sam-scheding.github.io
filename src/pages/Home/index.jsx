@@ -17,7 +17,6 @@ import Lottie from "react-lottie";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import patternAnimation from "../../assets/pattern.json";
-// JAE: www.blobmaker.app/ hi
 
 const pictures = [
   {
@@ -82,9 +81,6 @@ const Home = () => {
           ))}
         </div>
       </main>
-      {/* <div className="relative">
-        <Lottie options={getDefaultOptions(patternAnimation)} />
-      </div> */}
       <CountdownTimer />
       <div className="imageWrapper">
         <img src={pic1} className="left" />
