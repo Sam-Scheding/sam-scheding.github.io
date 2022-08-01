@@ -159,3 +159,7 @@ h6 {
 h2 {
   font-size: 3rem;
 }
+
+.typography {
+  font-family: "PolygraphW00-Bold", Helvetica, sans-serif;
+}
