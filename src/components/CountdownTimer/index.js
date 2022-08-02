@@ -12,7 +12,7 @@ const DateTimeDisplay = ({ value, type, isDanger }) => {
 };
 
 const CountdownTimer = () => {
-  const WEDDING_DATE = "2022/12/03";
+  const WEDDING_DATE = new Date("Dec 3, 2022 17:00:00").getTime();
   const [days, hours, minutes, seconds] = useCountdown(WEDDING_DATE);
 
   return (

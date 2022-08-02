@@ -1,11 +1,9 @@
-.container {
-  align-items: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  padding-top: 80px;
-  width: 100%;
+.text-area {
+  height: 150px;
+  font-family: sans-serif;
+}
+
+.text-area-input {
+  font-family: sans-serif;
+  padding-top: 20px;
 }

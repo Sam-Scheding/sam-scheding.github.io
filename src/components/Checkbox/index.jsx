@@ -14,6 +14,7 @@ export default function Checkbox({
         {label}
       </label>
       <input
+        required
         className="checkbox__input"
         type="checkbox"
         required={isRequired}

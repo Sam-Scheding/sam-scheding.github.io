@@ -59,19 +59,17 @@ const Home = () => {
   return (
     <div className="root">
       <main>
+        <div className="imageWrapper">
+          <img src={pic1} className="left" />
+          <img src={pic2} className="right" />
+          <img src={pic3} className="left" />
+        </div>
         <div className="linkWrapper">
           {pictures.map(({ src, url, label }) => (
             <Link className="link" key={url} to={url}>
               <div
                 style={{
                   backgroundImage: `url(${src})`,
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
-                  fontSize: "60pt",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
                 }}
                 className="linkImage"
               >
@@ -81,11 +79,6 @@ const Home = () => {
           ))}
         </div>
       </main>
-      <div className="imageWrapper">
-        <img src={pic1} className="left" />
-        <img src={pic2} className="right" />
-        <img src={pic3} className="left" />
-      </div>
       <CountdownTimer />
     </div>
   );

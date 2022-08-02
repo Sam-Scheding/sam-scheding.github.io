@@ -20,7 +20,7 @@ div[role="button"] {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 40px 0;
+  padding: 96px 0 0;
 }
 
 img {
@@ -36,7 +36,7 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 24px;
-  padding-top: 96px;
+  padding-top: 40px;
   width: 100%;
 }
 
@@ -52,6 +52,28 @@ img {
   height: 100%;
   transition: all 0.5s;
   width: 100%;
+  font-size: 8rem;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 560px) {
+  .linkImage {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .linkImage {
+    font-size: 4rem;
+  }
+  .link {
+    height: 150px;
+  }
 }
 
 .link:hover .linkImage,

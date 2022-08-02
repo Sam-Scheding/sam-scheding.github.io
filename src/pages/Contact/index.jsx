@@ -1,15 +1,13 @@
 import "./style.css";
 import { spirals } from "../../assets";
 import { useState, useCallback, useRef, useEffect } from "react";
-import TextInput from "../../components/TextInput";
-import TextArea from "../../components/TextArea";
 import Button from "../../components/Button";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
-  const [message, setMessage] = useState();
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     let userInfo = window.localStorage.getItem("userInfo");
@@ -23,9 +21,6 @@ const Contact = () => {
 
   const handleOnNameChange = ({ target }) => {
     setFullName(target.value);
-  };
-  const handleMessageChange = ({ target }) => {
-    setMessage(target.value);
   };
   const handleOnEmailChange = ({ target }) => {
     setEmail(target.value);
@@ -45,6 +40,7 @@ const Contact = () => {
       )
       .then(
         (result) => {
+          setSubmitted(true);
           console.log(result.text);
         },
         (error) => {
@@ -59,36 +55,65 @@ const Contact = () => {
         backgroundImage: `url(${spirals})`,
       }}
     >
-      <form className="form" ref={form} onSubmit={sendEmail}>
-        <h2>Have some questions?</h2>
-        <div className="form-input">
-          <TextInput
-            label="Full Name"
-            name="name"
-            defaultValue={fullName}
-            onChange={handleOnNameChange}
-          />
-        </div>
-        <div className="form-input">
-          <TextInput
-            label="Email address"
-            name="email"
-            defaultValue={email}
-            onChange={handleOnEmailChange}
-          />
-        </div>
-        <div className="form-input">
-          <TextArea
-            label="Send us a message"
-            name="message"
-            defaultValue={message}
-            onChange={handleMessageChange}
-          />
-        </div>
-        <div className="form-input">
-          <Button className="submit-button">Send 💌</Button>
-        </div>
-      </form>
+      {submitted ? (
+        <div class="form submitted">✅</div>
+      ) : (
+        <form className="form" ref={form} onSubmit={sendEmail}>
+          <h2 class="title">Have some questions?</h2>
+          <div class="input-container ic1">
+            <input
+              id="name"
+              name="name"
+              class="input"
+              type="text"
+              placeholder=" "
+              defaultValue={fullName}
+              onChange={handleOnNameChange}
+              required
+            />
+            <div class="cut cut-short" />
+            <label for="name" class="placeholder">
+              Full Name
+            </label>
+          </div>
+
+          <div class="input-container ic2">
+            <input
+              id="email"
+              class="input"
+              type="text"
+              placeholder=" "
+              name="email"
+              defaultValue={email}
+              onChange={handleOnEmailChange}
+              required
+            />
+            <div class="cut cut-email" />
+            <label for="email" class="placeholder">
+              Email Address
+            </label>
+          </div>
+
+          <div class="input-container ic2 text-area">
+            <textarea
+              id="message"
+              class="input text-area-input"
+              type="text"
+              placeholder=" "
+              name="message"
+              required
+            />
+            <div class="cut" />
+            <label for="message" class="placeholder">
+              Send us a message
+            </label>
+          </div>
+
+          <div className="form-input">
+            <Button className="submit-button">Send 💌</Button>
+          </div>
+        </form>
+      )}
     </div>
   );
 };

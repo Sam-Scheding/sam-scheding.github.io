@@ -1,14 +1,13 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import "./style.css";
-import TextInput from "../TextInput";
 import Checkbox from "../Checkbox";
-import Button from "../Button";
 import emailjs from "emailjs-com";
 
 const Form = () => {
   const [isChecked, setChecked] = useState(false);
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     let userInfo = window.localStorage.getItem("userInfo");
@@ -45,6 +44,7 @@ const Form = () => {
       )
       .then(
         (result) => {
+          setSubmitted(true);
           console.log(result.text);
         },
         (error) => {
@@ -53,31 +53,50 @@ const Form = () => {
       );
   }, []);
 
+  if (submitted) {
+    return <div class="form submitted">✅</div>;
+  }
+
   return (
     <form className="form" ref={form} onSubmit={sendEmail}>
-      <div>
-        <h2>RSVP</h2>
-        <p className="subText">Kindly reply by October 2022</p>
-      </div>
-      <div className="form-input">
-        <TextInput
-          label="Full Name"
+      <h2 class="title">RSVP</h2>
+      <div class="subtitle">Kindly reply by October 2022</div>
+
+      <div class="input-container ic1">
+        <input
+          id="name"
           name="name"
+          class="input"
+          type="text"
+          placeholder=" "
           defaultValue={fullName}
           onChange={handleOnNameChange}
+          required
         />
+        <div class="cut cut-short" />
+        <label for="name" class="placeholder">
+          Full Name
+        </label>
       </div>
 
-      <div className="form-input">
-        <TextInput
-          label="Email address"
+      <div class="input-container ic2">
+        <input
+          id="email"
+          class="input"
+          type="text"
+          placeholder=" "
           name="email"
           defaultValue={email}
           onChange={handleOnEmailChange}
+          required
         />
+        <div class="cut cut-email" />
+        <label for="email" class="placeholder">
+          Email Address
+        </label>
       </div>
 
-      <div className="form-input">
+      <div class="ic2">
         <Checkbox
           name="attendance"
           className="form-input"
@@ -87,17 +106,24 @@ const Form = () => {
         />
       </div>
       {isChecked && (
-        <div className="form-input">
-          <TextInput
-            label="Dietary Restrictions/Allergies"
-            placeholder="Vegetarian, Vegan, Celiac, etc"
+        <div class="input-container ic2">
+          <input
             name="dietary"
+            id="dietary"
+            class="input"
+            type="text"
+            placeholder=" "
           />
+          <div class="cut" />
+          <label for="dietary" class="placeholder">
+            Dietary Restrictions/Allergies
+          </label>
         </div>
       )}
-      <div className="form-input">
-        <Button className="submit-button">Submit</Button>
-      </div>
+
+      <button type="text" class="button__input">
+        submit
+      </button>
     </form>
   );
 };
