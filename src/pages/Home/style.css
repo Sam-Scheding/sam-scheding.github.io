@@ -5,10 +5,11 @@
 #4361EE;
 #4CC9F0; */
 .root {
-  text-align: center;
+  margin: 0 auto;
   width: 87.5%;
   max-width: 1260px;
-  margin: 0 auto;
+  padding-bottom: 80px;
+  text-align: center;
 }
 
 div[role="button"] {
@@ -16,11 +17,10 @@ div[role="button"] {
 }
 
 .imageWrapper {
-  margin: 24px 0 0;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  padding-bottom: 80px;
+  justify-content: space-around;
+  margin: 40px 0;
 }
 
 img {
@@ -30,27 +30,28 @@ img {
 .relative {
   position: relative;
 }
+
 .linkWrapper {
-  width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 24px;
-  padding-top: 80px;
+  padding-top: 96px;
+  width: 100%;
 }
 
 .link {
-  width: 50%;
+  cursor: pointer;
   height: 300px;
   overflow: hidden;
-  cursor: pointer;
   text-decoration: none;
+  width: 50%;
 }
 
 .linkImage {
-  width: 100%;
   height: 100%;
   transition: all 0.5s;
+  width: 100%;
 }
 
 .link:hover .linkImage,
@@ -63,14 +64,14 @@ img {
 }
 
 .linkImage::before {
+  background-color: rgba(52, 73, 94, 0.75);
   content: "";
   display: none;
   height: 100%;
-  width: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
-  background-color: rgba(52, 73, 94, 0.75);
+  width: 100%;
 }
 
 .linkLabel {

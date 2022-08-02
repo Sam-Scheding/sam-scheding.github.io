@@ -81,12 +81,12 @@ const Home = () => {
           ))}
         </div>
       </main>
-      <CountdownTimer />
       <div className="imageWrapper">
         <img src={pic1} className="left" />
         <img src={pic2} className="right" />
         <img src={pic3} className="left" />
       </div>
+      <CountdownTimer />
     </div>
   );
 };

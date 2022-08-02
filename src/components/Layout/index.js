@@ -9,7 +9,9 @@ const Layout = ({ children }) => {
       style={{ backgroundImage: `url(${psychadelic})` }}
     >
       <MainHeader>
-        <h1 className="header">Mia & Vlad's Wedding</h1>
+        <a href="/" className="headerLink">
+          <h1 className="header">Mia & Vlad's Wedding</h1>
+        </a>
       </MainHeader>
       {children}
       {/* <Footer /> */}

@@ -1,21 +1,21 @@
 .admin-container {
-  width: 100vw;
-  display: flex;
   align-items: flex-start;
-  margin-top: 100px;
+  display: flex;
   justify-content: center;
+  margin-top: 100px;
+  width: 100vw;
 }
 
 .form-container {
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 
 .content {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -24,10 +24,10 @@
   font-size: 20pt;
 }
 .code-box {
-  text-align: left;
-  width: 100%;
+  background-color: #f0f0f0;
   border: inset;
   max-height: 100px;
   overflow: scroll;
-  background-color: #F0F0F0;
+  text-align: left;
+  width: 100%;
 }

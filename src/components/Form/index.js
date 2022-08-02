@@ -1,4 +1,4 @@
-import { useState, memo, useCallback, useRef, useEffect } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import "./style.css";
 import TextInput from "../TextInput";
 import Checkbox from "../Checkbox";
@@ -11,25 +11,25 @@ const Form = () => {
   const [email, setEmail] = useState();
 
   useEffect(() => {
-    let userInfo = window.localStorage.getItem('userInfo');
+    let userInfo = window.localStorage.getItem("userInfo");
     userInfo = JSON.parse(userInfo);
-  
-    if(userInfo) {
+
+    if (userInfo) {
       setFullName(userInfo.fullName);
-      setEmail(userInfo.email)
+      setEmail(userInfo.email);
     }
-  }, [])
+  }, []);
 
   const handleOnChange = useCallback(({ target }) => {
     setChecked(target.checked);
   }, []);
 
   const handleOnNameChange = ({ target }) => {
-    setFullName(target.value)
-  }
+    setFullName(target.value);
+  };
   const handleOnEmailChange = ({ target }) => {
-    setEmail(target.value)
-  }
+    setEmail(target.value);
+  };
 
   const form = useRef();
 
@@ -55,11 +55,13 @@ const Form = () => {
 
   return (
     <form className="form" ref={form} onSubmit={sendEmail}>
-      <h2>RSVP</h2>
-      <p>Kindly reply by October 2022</p>
+      <div>
+        <h2>RSVP</h2>
+        <p className="subText">Kindly reply by October 2022</p>
+      </div>
       <div className="form-input">
-        <TextInput 
-          label="Full Name" 
+        <TextInput
+          label="Full Name"
           name="name"
           defaultValue={fullName}
           onChange={handleOnNameChange}
@@ -67,9 +69,9 @@ const Form = () => {
       </div>
 
       <div className="form-input">
-        <TextInput 
-          label="Email address" 
-          name="email" 
+        <TextInput
+          label="Email address"
+          name="email"
           defaultValue={email}
           onChange={handleOnEmailChange}
         />
@@ -94,10 +96,10 @@ const Form = () => {
         </div>
       )}
       <div className="form-input">
-        <Button className="submit-button">Reply Now</Button>
+        <Button className="submit-button">Submit</Button>
       </div>
     </form>
   );
-}
+};
 
 export default Form;
