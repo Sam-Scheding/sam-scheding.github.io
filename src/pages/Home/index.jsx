@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
 import CountdownTimer from "../../components/CountdownTimer";
-import MainHeader from "../../components/MainHeader";
 import {
   pic1,
   pic2,
@@ -10,13 +9,9 @@ import {
   lightpainting,
   ripples,
   spirals,
-  psychadelic,
-  psytrance,
 } from "../../assets";
-import Lottie from "react-lottie";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import patternAnimation from "../../assets/pattern.json";
 
 const pictures = [
   {
@@ -26,8 +21,8 @@ const pictures = [
   },
   {
     src: lightpainting,
-    url: "/location",
-    label: "LOCATION",
+    url: "/story",
+    label: "OUR STORY",
   },
   {
     src: ripples,

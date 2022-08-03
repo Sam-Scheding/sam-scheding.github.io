@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Location = () => {
+const Story = () => {
   return (
     <div className="locationWrapper">
       <iframe
@@ -16,4 +16,4 @@ const Location = () => {
   );
 };
 
-export default Location;
+export default Story;

@@ -1,41 +1,72 @@
 .faq-container {
   align-items: center;
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: cover;
   display: flex;
   justify-content: center;
   padding-top: 80px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: black;
 }
 
 .faq {
   background-color: white;
   border-radius: 20px;
   margin: 40px 0px 40px 0px;
-  max-width: 800px;
+  max-width: 650px;
   padding: 24px;
   text-align: center;
 }
 
-.faq > h1 {
+.faq > h2 {
   font-size: 50pt;
   font-weight: 900;
   margin-bottom: 24px;
 }
 
-.faq > h2 {
+.faq > details {
+  text-align: left;
+  border-bottom: 1px solid #e6e9ed;
+  -webkit-font-smoothing: antialiased;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  padding: 22px 0;
+  max-width: 80%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.faq > details:first-of-type {
+  border-top: 1px solid #e6e9ed;
+}
+
+summary {
   font-family: "PolygraphW00-Bold", sans-serif;
   font-size: 24pt;
   font-weight: 900;
-  margin-bottom: 16px;
   text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+  max-width: 90%;
 }
 
-.faq > p {
-  -webkit-font-smoothing: antialiased;
-  font-family: Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 36px;
+details[open] summary {
+  margin-bottom: 14px;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  position: absolute;
+  right: 0;
+  content: "↡";
+  font-size: 40px;
+  top: 10px;
+}
+
+details[open] summary:after {
+  content: "↟";
 }

@@ -2,7 +2,7 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import "./style.css";
 import Checkbox from "../Checkbox";
 import emailjs from "emailjs-com";
-
+import Success from "../Success";
 const Form = () => {
   const [isChecked, setChecked] = useState(false);
   const [fullName, setFullName] = useState();
@@ -19,9 +19,9 @@ const Form = () => {
     }
   }, []);
 
-  const handleOnChange = useCallback(({ target }) => {
-    setChecked(target.checked);
-  }, []);
+  const handleOnChange = useCallback(() => {
+    setChecked(!isChecked);
+  }, [isChecked]);
 
   const handleOnNameChange = ({ target }) => {
     setFullName(target.value);
@@ -54,17 +54,16 @@ const Form = () => {
   }, []);
 
   if (submitted) {
-    return <div class="form submitted">✅</div>;
+    return <Success message={"Your RSVP has been sent!"} />;
   }
 
   return (
     <form className="form" ref={form} onSubmit={sendEmail}>
       <h2 class="title">RSVP</h2>
-      <div class="subtitle">Kindly reply by October 2022</div>
+      <div class="subtitle">Kindly reply by 31 October 2022</div>
 
       <div class="input-container ic1">
         <input
-          id="name"
           name="name"
           class="input"
           type="text"
@@ -74,25 +73,8 @@ const Form = () => {
           required
         />
         <div class="cut cut-short" />
-        <label for="name" class="placeholder">
+        <label htmlFor="name" class="placeholder">
           Full Name
-        </label>
-      </div>
-
-      <div class="input-container ic2">
-        <input
-          id="email"
-          class="input"
-          type="text"
-          placeholder=" "
-          name="email"
-          defaultValue={email}
-          onChange={handleOnEmailChange}
-          required
-        />
-        <div class="cut cut-email" />
-        <label for="email" class="placeholder">
-          Email Address
         </label>
       </div>
 
@@ -106,22 +88,83 @@ const Form = () => {
         />
       </div>
       {isChecked && (
-        <div class="input-container ic2">
-          <input
-            name="dietary"
-            id="dietary"
-            class="input"
-            type="text"
-            placeholder=" "
-          />
-          <div class="cut" />
-          <label for="dietary" class="placeholder">
-            Dietary Restrictions/Allergies
-          </label>
-        </div>
+        <>
+          <div class="input-container ic2">
+            <input
+              class="input"
+              type="tel"
+              placeholder=" "
+              name="mobile"
+              required
+            />
+            <div class="cut cut-email" />
+            <label htmlFor="mobile" class="placeholder">
+              Mobile Number
+            </label>
+          </div>
+          <div class="input-container ic2">
+            <input
+              class="input"
+              type="email"
+              placeholder=" "
+              name="email"
+              defaultValue={email}
+              onChange={handleOnEmailChange}
+              required
+            />
+            <div class="cut cut-email" />
+            <label htmlFor="email" class="placeholder">
+              Email Address
+            </label>
+          </div>
+          <div class="input-container ic2">
+            <input
+              class="input"
+              type="text"
+              placeholder=" "
+              name="address"
+              required
+            />
+            <div class="cut cut-email" />
+            <label htmlFor="address" class="placeholder">
+              Postal Address
+            </label>
+          </div>
+          <div class="input-container ic2">
+            <input name="dietary" class="input" type="text" placeholder=" " />
+            <div class="cut" />
+            <label htmlFor="dietary" class="placeholder">
+              Dietary Restrictions/Allergies
+            </label>
+          </div>
+          <div class="input-container ic2 text-area">
+            <textarea
+              class="input text-area-input"
+              type="text"
+              placeholder=" "
+              name="special"
+            />
+            <div class="cut" />
+            <label htmlFor="special" class="placeholder">
+              SPECIAL QUESTION TBC
+            </label>
+          </div>
+          <div class="input-container ic2 text-area">
+            <textarea
+              class="input text-area-input"
+              type="text"
+              placeholder=" "
+              name="comments"
+            />
+            <div class="cut cut-short" />
+            <label htmlFor="comments" class="placeholder">
+              Comments
+            </label>
+          </div>
+        </>
       )}
 
-      <button type="text" class="button__input">
+      <button type="submit" class="button__input">
         submit
       </button>
     </form>

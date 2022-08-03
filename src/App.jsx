@@ -1,12 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Tickets from "./pages/Tickets";
-import FAQ from "./pages/FAQ";
-import Home from "./pages/Home";
-import Admin from "./pages/Admin";
-import Location from "./pages/Location";
 import Layout from "./components/Layout";
-import Contact from "./pages/Contact";
+import { Tickets, FAQ, Home, Admin, Story, Contact } from "./pages";
 
 export default function App() {
   return (
@@ -21,7 +16,7 @@ export default function App() {
           />
           <Route path="/tickets" element={<Tickets />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/location" element={<Location />} />
+          <Route path="/story" element={<Story />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>

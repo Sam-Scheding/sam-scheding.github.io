@@ -2,6 +2,7 @@ import "./style.css";
 import { spirals } from "../../assets";
 import { useState, useCallback, useRef, useEffect } from "react";
 import Button from "../../components/Button";
+import Success from "../../components/Success";
 import emailjs from "emailjs-com";
 
 const Contact = () => {
@@ -56,13 +57,12 @@ const Contact = () => {
       }}
     >
       {submitted ? (
-        <div class="form submitted">✅</div>
+        <Success message={"Your message has been sent!"} />
       ) : (
         <form className="form" ref={form} onSubmit={sendEmail}>
           <h2 class="title">Have some questions?</h2>
           <div class="input-container ic1">
             <input
-              id="name"
               name="name"
               class="input"
               type="text"
@@ -72,16 +72,15 @@ const Contact = () => {
               required
             />
             <div class="cut cut-short" />
-            <label for="name" class="placeholder">
+            <label htmlFor="name" class="placeholder">
               Full Name
             </label>
           </div>
 
           <div class="input-container ic2">
             <input
-              id="email"
               class="input"
-              type="text"
+              type="email"
               placeholder=" "
               name="email"
               defaultValue={email}
@@ -89,14 +88,13 @@ const Contact = () => {
               required
             />
             <div class="cut cut-email" />
-            <label for="email" class="placeholder">
+            <label htmlFor="email" class="placeholder">
               Email Address
             </label>
           </div>
 
           <div class="input-container ic2 text-area">
             <textarea
-              id="message"
               class="input text-area-input"
               type="text"
               placeholder=" "
@@ -104,7 +102,7 @@ const Contact = () => {
               required
             />
             <div class="cut" />
-            <label for="message" class="placeholder">
+            <label htmlFor="message" class="placeholder">
               Send us a message
             </label>
           </div>

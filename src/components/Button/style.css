@@ -20,7 +20,9 @@
   width: 100%;
 }
 
-.button__input:hover {
+.button__input:hover,
+.button__input:active,
+.button__input:focus {
   color: white;
   background-color: #1c1b2d;
   border: 1px solid white;

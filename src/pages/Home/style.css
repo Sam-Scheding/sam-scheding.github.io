@@ -27,10 +27,6 @@ img {
   max-width: 33.33%;
 }
 
-.relative {
-  position: relative;
-}
-
 .linkWrapper {
   display: flex;
   flex-wrap: wrap;
