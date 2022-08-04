@@ -59,13 +59,13 @@ img {
 
 @media only screen and (max-width: 560px) {
   .linkImage {
-    font-size: 6rem;
+    font-size: 5.5rem;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .linkImage {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
   .link {
     height: 150px;

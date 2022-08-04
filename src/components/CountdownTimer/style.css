@@ -17,9 +17,12 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 400px) {
   .show-counter .countdown {
     padding: 10px;
+  }
+  .show-counter {
+    font-size: 3rem;
   }
 }
 

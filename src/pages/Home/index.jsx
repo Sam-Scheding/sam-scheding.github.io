@@ -20,9 +20,9 @@ const pictures = [
     label: "TICKETS",
   },
   {
-    src: lightpainting,
-    url: "/story",
-    label: "OUR STORY",
+    src: spirals,
+    url: "/program",
+    label: "PROGRAM",
   },
   {
     src: ripples,
@@ -30,9 +30,9 @@ const pictures = [
     label: "FAQ",
   },
   {
-    src: spirals,
-    url: "/contact",
-    label: "CONTACT",
+    src: lightpainting,
+    url: "/story",
+    label: "OUR STORY",
   },
 ];
 

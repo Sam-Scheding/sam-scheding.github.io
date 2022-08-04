@@ -8,22 +8,23 @@
   background-color: black;
 }
 
-.faq {
+.wrapper {
   background-color: white;
   border-radius: 20px;
   margin: 40px 0px 40px 0px;
-  max-width: 650px;
+  max-width: 560px;
+  min-width: 400px;
   padding: 24px;
   text-align: center;
 }
 
-.faq > h2 {
+.wrapper > h2 {
   font-size: 50pt;
   font-weight: 900;
   margin-bottom: 24px;
 }
 
-.faq > details {
+.wrapper > details {
   text-align: left;
   border-bottom: 1px solid #e6e9ed;
   -webkit-font-smoothing: antialiased;
@@ -32,12 +33,12 @@
   font-weight: 300;
   line-height: 1.5;
   padding: 22px 0;
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
   position: relative;
 }
 
-.faq > details:first-of-type {
+.wrapper > details:first-of-type {
   border-top: 1px solid #e6e9ed;
 }
 
@@ -69,4 +70,11 @@ summary::after {
 
 details[open] summary:after {
   content: "↟";
+}
+
+@media only screen and (max-width: 400px) {
+  .wrapper {
+    max-width: 90%;
+    min-width: initial;
+  }
 }

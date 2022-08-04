@@ -1,18 +1,26 @@
-iframe {
-  filter: invert();
-}
-
 .storyWrapper {
+  text-transform: uppercase;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   padding-top: 80px;
+  max-width: 560px;
 }
 
 .storyWrapper p {
   margin-bottom: 2.5rem;
-  text-transform: uppercase;
   letter-spacing: 1.5px;
   line-height: 2.5rem;
   font-weight: 300;
+}
+
+.storyWrapper h3 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 400px) {
+  .storyWrapper {
+    max-width: 90%;
+  }
 }

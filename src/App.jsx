@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
-import { Tickets, FAQ, Home, Admin, Story, Contact } from "./pages";
+import { Tickets, FAQ, Home, Admin, Story, Program } from "./pages";
 
 export default function App() {
   return (
@@ -15,9 +15,9 @@ export default function App() {
             element={<Admin />}
           />
           <Route path="/tickets" element={<Tickets />} />
+          <Route path="/program" element={<Program />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/story" element={<Story />} />
-          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>
     </Router>
