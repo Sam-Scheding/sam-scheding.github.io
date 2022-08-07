@@ -7,6 +7,8 @@ const FAQ = () => {
       className="faq-container"
       style={{
         backgroundImage: `url(${ripples})`,
+        backgroundRepeat: 'repeat',
+        backgroundSize: 'cover',
       }}
     >
       <div className="wrapper">
