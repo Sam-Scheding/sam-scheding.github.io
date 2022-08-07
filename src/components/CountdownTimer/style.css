@@ -17,12 +17,13 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   .show-counter .countdown {
     padding: 10px;
   }
   .show-counter {
     font-size: 3rem;
+    flex-wrap: wrap;
   }
 }
 
@@ -34,10 +35,12 @@
   margin-bottom: 8px;
   text-transform: uppercase;
   font-size: 4rem;
+  font-family: "Polygraph W00 Regular", Helvetica, Arial, sans-serif;
 }
 
 .show-counter .countdown > span {
   text-transform: uppercase;
   font-size: 2rem;
   line-height: 1rem;
+  font-family: "Polygraph W00 Regular", Helvetica, Arial, sans-serif;
 }

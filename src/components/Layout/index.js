@@ -10,11 +10,10 @@ const Layout = ({ children }) => {
     >
       <MainHeader>
         <a href="/" className="headerLink">
-          <h1 className="header">Mia & Vlad's Wedding</h1>
+          <h1 className="header">Vlad & Mia's Wedding</h1>
         </a>
       </MainHeader>
       {children}
-      {/* <Footer /> */}
     </div>
   );
 };

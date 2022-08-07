@@ -1,26 +1,21 @@
-.storyWrapper {
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  padding-top: 80px;
-  max-width: 560px;
+.faq-link,
+.faq-link:hover,
+.faq-link:active,
+.faq-link:focus {
+  color: #7209b7;
 }
 
-.storyWrapper p {
+.program p {
+  line-height: 2;
+}
+
+.dressCodeImg {
+  object-position: center 33%;
+  width: 100%;
   margin-bottom: 2.5rem;
-  letter-spacing: 1.5px;
-  line-height: 2.5rem;
-  font-weight: 300;
 }
 
-.storyWrapper h3 {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-}
-
-@media only screen and (max-width: 400px) {
-  .storyWrapper {
-    max-width: 90%;
-  }
+.contentWrapper img {
+  object-fit: cover;
+  height: 250px;
 }
