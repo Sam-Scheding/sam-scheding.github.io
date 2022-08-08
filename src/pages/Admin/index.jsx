@@ -4,8 +4,7 @@ import Button from "../../components/Button"
 import './style.css'
 import { useState } from "react"
 
-// const BASE_URL = 'https://mia-and-vlads-wedding.com' // TODO: Not sure what the URL will be at the moment
-const BASE_URL = 'http://localhost:3000'
+const BASE_URL = 'http://vladmiawedding.com'
 
 export default function Admin() {
   // Form Data
@@ -58,18 +57,20 @@ export default function Admin() {
             >
             Generate
           </Button>
-          {decodedUserInfo &&
-            <code className="code-box">
-              <pre>
-                { decodedUserInfo }
-              </pre>
-            </code>
-          }
+        {decodedUserInfo &&
+          <code className="code-box">
+            <pre>
+              { decodedUserInfo }
+            </pre>
+          </code>
+        }
         </div>
         <br />
-        <a href={ displayLink }>
-          { displayLink }
-        </a>
+        <div class="link-container">
+          <a href={ displayLink }>
+            { displayLink }
+          </a>
+        </div>
       </div>
     </div>
   )
