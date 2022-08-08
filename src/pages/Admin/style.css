@@ -24,10 +24,24 @@
   font-size: 20pt;
 }
 .code-box {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12pt;
   background-color: #f0f0f0;
   border: inset;
+  margin-top: 50px;
   max-height: 100px;
   overflow: scroll;
   text-align: left;
   width: 100%;
+}
+
+
+.link-container {
+  background-color: darkgray;
+  opacity: 80%;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  word-break: break-all;
+  margin-inline: 30px;
 }
