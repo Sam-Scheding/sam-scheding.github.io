@@ -2,9 +2,9 @@ import React from "react";
 import "./style.css";
 import CountdownTimer from "../../components/CountdownTimer";
 import {
-  pic1,
-  pic2,
-  pic3,
+  home1,
+  home2,
+  home3,
   circle,
   lightpainting,
   ripples,
@@ -55,9 +55,9 @@ const Home = () => {
     <div className="root">
       <main>
         <div className="imageWrapper">
-          <img src={pic1} className="left" />
-          <img src={pic2} className="right" />
-          <img src={pic3} className="left" />
+          <img src={home1} />
+          <img src={home2} />
+          <img src={home3} />
         </div>
         <div className="linkWrapper">
           {pictures.map(({ src, url, label }) => (

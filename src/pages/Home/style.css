@@ -23,8 +23,15 @@ div[role="button"] {
   padding: 96px 0 0;
 }
 
-img {
-  max-width: 33.33%;
+.imageWrapper img {
+  width: 33.3%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0;
+}
+
+.imageWrapper img {
 }
 
 .linkWrapper {
@@ -44,6 +51,24 @@ img {
   width: 50%;
 }
 
+.link:first-of-type,
+.imageWrapper img:first-of-type {
+  border-top-left-radius: 30px;
+}
+
+.link:nth-of-type(2),
+.imageWrapper img:nth-of-type(3) {
+  border-top-right-radius: 30px;
+}
+.link:nth-of-type(3),
+.imageWrapper img:first-of-type {
+  border-bottom-left-radius: 30px;
+}
+.link:nth-of-type(4),
+.imageWrapper img:nth-of-type(3) {
+  border-bottom-right-radius: 30px;
+}
+
 .linkImage {
   height: 100%;
   transition: all 0.5s;
@@ -61,14 +86,27 @@ img {
   .linkImage {
     font-size: 5.5rem;
   }
+  .link {
+    height: 200px;
+  }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   .linkImage {
     font-size: 3.5rem;
   }
   .link {
     height: 150px;
+  }
+
+  .imageWrapper img {
+    display: none;
+  }
+
+  .imageWrapper img:nth-child(3) {
+    display: block;
+    width: 100%;
+    border-radius: 30px;
   }
 }
 

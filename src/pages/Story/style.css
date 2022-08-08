@@ -1,18 +1,83 @@
-iframe {
-  filter: invert();
-}
-
-.storyWrapper {
+.contentWrapper {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   padding-top: 80px;
+  max-width: 560px;
 }
 
-.storyWrapper p {
+img {
   margin-bottom: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  line-height: 2.5rem;
+}
+
+.contentWrapper p {
+  margin-bottom: 2.5rem;
+  font-size: 16px;
+  line-height: 1.5;
   font-weight: 300;
+}
+
+.contentWrapper h3 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.storyImageWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.storyImageWrapper img {
+  width: 50%;
+}
+
+.storyImageWrapper :nth-child(1) {
+  order: 1;
+}
+.storyImageWrapper :nth-child(2) {
+  order: 3;
+}
+.storyImageWrapper :nth-child(3) {
+  order: 2;
+}
+.storyImageWrapper :nth-child(4) {
+  order: 4;
+}
+
+.img5 {
+  width: 100%;
+}
+
+.headingimg {
+  width: 100%;
+  object-position: center 23%;
+}
+
+.img8 {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center 94%;
+}
+
+.contentWrapper img.img6 {
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (max-width: 425px) {
+  .contentWrapper {
+    max-width: 90%;
+  }
+  .storyImageWrapper :nth-child(2) {
+    order: 2;
+  }
+  .storyImageWrapper :nth-child(3) {
+    order: 3;
+  }
+
+  .storyImageWrapper img {
+    width: 100%;
+  }
 }

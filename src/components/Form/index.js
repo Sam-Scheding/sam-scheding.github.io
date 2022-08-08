@@ -149,21 +149,20 @@ const Form = () => {
               SPECIAL QUESTION TBC
             </label>
           </div>
-          <div class="input-container ic2 text-area">
-            <textarea
-              class="input text-area-input"
-              type="text"
-              placeholder=" "
-              name="comments"
-            />
-            <div class="cut cut-short" />
-            <label htmlFor="comments" class="placeholder">
-              Comments
-            </label>
-          </div>
         </>
       )}
-
+      <div class="input-container ic2 text-area">
+        <textarea
+          class="input text-area-input"
+          type="text"
+          placeholder=" "
+          name="comments"
+        />
+        <div class="cut cut-short" />
+        <label htmlFor="comments" class="placeholder">
+          Comments
+        </label>
+      </div>
       <button type="submit" class="button__input">
         submit
       </button>

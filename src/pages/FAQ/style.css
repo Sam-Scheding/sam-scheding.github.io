@@ -13,7 +13,7 @@
   border-radius: 20px;
   margin: 40px 0px 40px 0px;
   max-width: 560px;
-  min-width: 400px;
+  min-width: 425px;
   padding: 24px;
   text-align: center;
 }
@@ -72,9 +72,15 @@ details[open] summary:after {
   content: "↟";
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 425px) {
   .wrapper {
     max-width: 90%;
     min-width: initial;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .wrapper {
+    padding: 24px 12px;
   }
 }

@@ -1,12 +1,13 @@
 import "./style.css";
+import { afterdresscode } from "../../assets";
 
 const Program = () => {
   return (
-    <div class="storyWrapper">
+    <div class="contentWrapper program">
       <div class="wrapper">
         <h2>Program</h2>
         <h3>Date</h3>
-        <p>Saturday 3 August 2022</p>
+        <p>Saturday 3 December 2022</p>
         <h3>Time</h3>
         <p>
           Arrive by 5:00pm for nibbles and drinks
@@ -29,8 +30,13 @@ const Program = () => {
           <br />
           Avoid wearing red and/or white
         </p>
+        <img src={afterdresscode} className="dressCodeImg" />
         <p>
-          See <a href="/faq">FAQ page</a> for more details
+          See{" "}
+          <a href="/faq" className="faq-link">
+            FAQ page
+          </a>{" "}
+          for more details
         </p>
       </div>
     </div>
