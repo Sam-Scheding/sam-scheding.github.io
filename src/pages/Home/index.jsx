@@ -12,6 +12,12 @@ import {
 } from "../../assets";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const pictures = [
   {
@@ -59,6 +65,26 @@ const Home = () => {
           <img src={home2} />
           <img src={home3} />
         </div>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={30}
+          loop={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+        >
+          <SwiperSlide>
+            <img src={home1} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={home2} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={home3} />
+          </SwiperSlide>
+        </Swiper>
         <div className="linkWrapper">
           {pictures.map(({ src, url, label }) => (
             <Link className="link" key={url} to={url}>

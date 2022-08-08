@@ -146,7 +146,7 @@ const Form = () => {
             />
             <div class="cut" />
             <label htmlFor="special" class="placeholder">
-              SPECIAL QUESTION TBC
+              What’s your favourite song to dance to?
             </label>
           </div>
         </>
