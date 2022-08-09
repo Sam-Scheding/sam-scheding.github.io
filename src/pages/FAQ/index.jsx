@@ -7,8 +7,8 @@ const FAQ = () => {
       className="faq-container"
       style={{
         backgroundImage: `url(${ripples})`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: 'cover',
+        backgroundRepeat: "repeat",
+        backgroundSize: "cover",
       }}
     >
       <div className="wrapper">
@@ -30,9 +30,9 @@ const FAQ = () => {
 
         <details>
           <summary>Is there parking available?</summary>
-          Limited free street parking is available along Orleans Rd and
-          surrounding streets, and we highly recommend carpooling. If you are
-          driving, please drink responsibly and plan how you will get home.
+          Limited free street parking is available along our street and
+          surrounds, and we highly recommend carpooling. If you are driving,
+          please drink responsibly and plan how you will get home.
         </details>
 
         <details>
@@ -75,7 +75,7 @@ const FAQ = () => {
         <details>
           <summary>Should I bring a gift?</summary>
           Your participation in our special day is the greatest gift of all!
-          We’d greatly appreciate a monetary contribution towards our 2023
+          We’d also greatly appreciate a monetary contribution towards our 2023
           honeymoon.
         </details>
 
@@ -112,6 +112,5 @@ const FAQ = () => {
     </div>
   );
 };
-
 
 export default FAQ;

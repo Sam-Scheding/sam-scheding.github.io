@@ -32,15 +32,13 @@ const Story = () => {
           <img src={storyAfterp3} />
         </div>
         <p>
-          And then, in March 2020, the world locked down. We took the
-          opportunity to move in together to a beautiful new neighbourhood -
+          In March 2020, the world locked down. We decided to move in together -
           because what could go wrong with spending 24/7 in the same house?
         </p>
         <p>
-          As it turns out, it was fantastic. From daily neighbourhood walks, to
-          visiting each other’s home offices, to creating the best fusion
-          Asian/European recipes - we enjoyed every minute of our lockdown
-          together.
+          From daily walks exploring our new neighbourhood, to coworking in our
+          home offices, to inventing creative fusion Asian/European recipes -
+          the lockdown brought us closer together than ever.
         </p>
         <img src={storyAfterp5} className="img5" />
         <p>

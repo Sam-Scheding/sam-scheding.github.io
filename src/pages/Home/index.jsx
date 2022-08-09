@@ -76,13 +76,13 @@ const Home = () => {
           modules={[Pagination, Navigation]}
         >
           <SwiperSlide>
-            <img src={home1} />
-          </SwiperSlide>
-          <SwiperSlide>
             <img src={home2} />
           </SwiperSlide>
           <SwiperSlide>
             <img src={home3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={home1} />
           </SwiperSlide>
         </Swiper>
         <div className="linkWrapper">
