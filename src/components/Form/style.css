@@ -108,6 +108,10 @@ h2 {
   width: 100px;
 }
 
+.cut-long {
+  width: 230px;
+}
+
 .input:focus ~ .cut,
 .input:not(:placeholder-shown) ~ .cut {
   transform: translateY(8px);

@@ -144,7 +144,7 @@ const Form = () => {
               placeholder=" "
               name="special"
             />
-            <div class="cut" />
+            <div class="cut cut-long" />
             <label htmlFor="special" class="placeholder">
               What’s your favourite song to dance to?
             </label>
