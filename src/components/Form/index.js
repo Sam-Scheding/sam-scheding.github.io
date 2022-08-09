@@ -4,7 +4,7 @@ import Checkbox from "../Checkbox";
 import emailjs from "emailjs-com";
 import Success from "../Success";
 const Form = () => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(true);
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
   const [submitted, setSubmitted] = useState(false);

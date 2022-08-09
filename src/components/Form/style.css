@@ -137,3 +137,8 @@ h2 {
 .input:focus ~ .placeholder {
   color: #9000ce;
 }
+
+.instructions {
+  font-size: 12px;
+  font-weight: bold;
+}

@@ -64,12 +64,11 @@ const FAQ = () => {
 
         <details>
           <summary>Can I take photos and post them to social media?</summary>
-          While we will have a professional photographer at the wedding, we also
-          encourage you to take as many photos as you wish – we only request
-          that you 1) be present and put your phones down during our ceremony
-          (we’ll give you a photo op later), 2) tag us in any social media
-          photos/posts/stories, and 3) please don’t block the photographer from
-          getting the best shot!
+          We will have a professional photographer at the wedding. We encourage
+          you to take as many photos as you wish – but we request that you: 1)
+          Be present and put your phones down during our ceremony (we’ll give
+          you a photo op at the end!), 2) Don’t block the photographer, and 3)
+          Tag us in all your photos and stories!
         </details>
 
         <details>
