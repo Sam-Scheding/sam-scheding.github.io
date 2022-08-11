@@ -7,8 +7,8 @@ const FAQ = () => {
       className="faq-container"
       style={{
         backgroundImage: `url(${ripples})`,
-        backgroundRepeat: 'repeat',
-        backgroundSize: 'cover',
+        backgroundRepeat: "repeat",
+        backgroundSize: "cover",
       }}
     >
       <div className="wrapper">
@@ -30,9 +30,9 @@ const FAQ = () => {
 
         <details>
           <summary>Is there parking available?</summary>
-          Limited free street parking is available along Orleans Rd and
-          surrounding streets, and we highly recommend carpooling. If you are
-          driving, please drink responsibly and plan how you will get home.
+          Limited free street parking is available along our street and
+          surrounds, and we highly recommend carpooling. If you are driving,
+          please drink responsibly and plan how you will get home.
         </details>
 
         <details>
@@ -64,18 +64,17 @@ const FAQ = () => {
 
         <details>
           <summary>Can I take photos and post them to social media?</summary>
-          While we will have a professional photographer at the wedding, we also
-          encourage you to take as many photos as you wish – we only request
-          that you 1) be present and put your phones down during our ceremony
-          (we’ll give you a photo op later), 2) tag us in any social media
-          photos/posts/stories, and 3) please don’t block the photographer from
-          getting the best shot!
+          We will have a professional photographer at the wedding. We encourage
+          you to take as many photos as you wish – but we request that you: 1)
+          Be present and put your phones down during our ceremony (we’ll give
+          you a photo op at the end!), 2) Don’t block the photographer, and 3)
+          Tag us in all your photos and stories!
         </details>
 
         <details>
           <summary>Should I bring a gift?</summary>
           Your participation in our special day is the greatest gift of all!
-          We’d greatly appreciate a monetary contribution towards our 2023
+          We’d also greatly appreciate a monetary contribution towards our 2023
           honeymoon.
         </details>
 
@@ -112,6 +111,5 @@ const FAQ = () => {
     </div>
   );
 };
-
 
 export default FAQ;

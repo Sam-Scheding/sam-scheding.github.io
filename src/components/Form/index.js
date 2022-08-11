@@ -4,7 +4,7 @@ import Checkbox from "../Checkbox";
 import emailjs from "emailjs-com";
 import Success from "../Success";
 const Form = () => {
-  const [isChecked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(true);
   const [fullName, setFullName] = useState();
   const [email, setEmail] = useState();
   const [submitted, setSubmitted] = useState(false);
@@ -144,9 +144,9 @@ const Form = () => {
               placeholder=" "
               name="special"
             />
-            <div class="cut" />
+            <div class="cut cut-long" />
             <label htmlFor="special" class="placeholder">
-              SPECIAL QUESTION TBC
+              What’s your favourite song to dance to?
             </label>
           </div>
         </>

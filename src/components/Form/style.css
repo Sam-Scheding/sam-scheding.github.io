@@ -26,7 +26,7 @@ h2 {
   width: 100%;
   font-weight: 300;
   font-size: 16px;
-  margin: 96px 0;
+  margin: 120px 0;
 }
 
 .submitted {
@@ -108,6 +108,10 @@ h2 {
   width: 100px;
 }
 
+.cut-long {
+  width: 230px;
+}
+
 .input:focus ~ .cut,
 .input:not(:placeholder-shown) ~ .cut {
   transform: translateY(8px);
@@ -136,4 +140,9 @@ h2 {
 
 .input:focus ~ .placeholder {
   color: #9000ce;
+}
+
+.instructions {
+  font-size: 12px;
+  font-weight: bold;
 }

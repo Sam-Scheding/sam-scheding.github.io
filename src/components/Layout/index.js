@@ -11,6 +11,7 @@ const Layout = ({ children }) => {
       <MainHeader>
         <a href="/" className="headerLink">
           <h1 className="header">Vlad & Mia's Wedding</h1>
+          <p className="headerDate">03•DEC•22</p>
         </a>
       </MainHeader>
       {children}
