@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-export default function Checkbox({ label, name, onChange, value }) {
+export default function Checkbox({ label, name, onChange, value, defaultValue }) {
   return (
     <div className="checkbox__root">
       <label className="toggle" htmlFor={name}>
@@ -11,6 +11,7 @@ export default function Checkbox({ label, name, onChange, value }) {
           type="checkbox"
           name={name}
           value={value ? "attending" : "not attending"}
+          defaultChecked={defaultValue}
           checked={value}
           onChange={onChange}
         />
