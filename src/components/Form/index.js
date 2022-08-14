@@ -9,29 +9,28 @@ const Form = () => {
   const [email, setEmail] = useState();
   const [additionalGuests, setAdditionalGuests] = useState([]);
   const [submitted, setSubmitted] = useState(false);
-  const [guestAttendance, setGuestAttendance] = useState([])
+  const [guestAttendance, setGuestAttendance] = useState([]);
 
   useEffect(() => {
     let userInfo = window.localStorage.getItem("userInfo");
     userInfo = JSON.parse(userInfo);
-    console.log(userInfo)
+    console.log(userInfo);
 
     if (userInfo) {
       setFullName(userInfo.fullName);
       setEmail(userInfo.email);
-      setAdditionalGuests(userInfo.guests)
-      if((userInfo.guests && userInfo.guests.length > 0)) {
-        setGuestAttendance(Array(userInfo.guests.length).fill(true))
+      setAdditionalGuests(userInfo.guests);
+      if (userInfo.guests && userInfo.guests.length > 0) {
+        setGuestAttendance(Array(userInfo.guests.length).fill(true));
       }
     }
   }, []);
 
-
   const handleOnGuestChange = (event, id) => {
-    const g = [...guestAttendance]
-    g[id] = !g[id]
-    setGuestAttendance(g)
-  }
+    const g = [...guestAttendance];
+    g[id] = !g[id];
+    setGuestAttendance(g);
+  };
 
   const handleOnChange = useCallback(() => {
     setChecked(!isChecked);
@@ -145,7 +144,12 @@ const Form = () => {
             </label>
           </div>
           <div className="input-container ic2">
-            <input name="dietary" className="input" type="text" placeholder=" " />
+            <input
+              name="dietary"
+              className="input"
+              type="text"
+              placeholder=" "
+            />
             <div className="cut" />
             <label htmlFor="dietary" className="placeholder">
               Dietary Restrictions/Allergies
@@ -154,69 +158,67 @@ const Form = () => {
         </>
       )}
 
-          {additionalGuests && additionalGuests.map((guest, idx) => (
-            <div key={idx} style={{marginTop: "40px"}}>
-              <hr />
-              <div className="input-container ic1">
+      {additionalGuests &&
+        additionalGuests.map((guest, idx) => (
+          <div key={idx} style={{ marginTop: "40px" }}>
+            <hr />
+            <div className="input-container ic1">
+              <input
+                name={`name_${idx}`}
+                className="input"
+                type="text"
+                placeholder=" "
+                defaultValue={guest}
+                required
+              />
+              <div className="cut cut-email" />
+              <label htmlFor={`name_${idx}`} className="placeholder">
+                Guest Name {idx + 1}
+              </label>
+            </div>
+
+            <div className="ic2">
+              <Checkbox
+                name={`attendance_${idx}`}
+                className="form-input"
+                label={`Will ${guest} be joining us?`}
+                onChange={(event) => handleOnGuestChange(event, idx)}
+                value={guestAttendance[idx]}
+              />
+            </div>
+
+            {guestAttendance[idx] && (
+              <div className="input-container ic2">
                 <input
-                  name={`name_${idx}`}
+                  name={`dietary_${idx}`}
                   className="input"
                   type="text"
                   placeholder=" "
-                  defaultValue={guest}
-                  required
                 />
-                <div className="cut cut-email" />
-                <label 
-                  htmlFor={`name_${idx}`}
-                  className="placeholder">
-                  Guest Name {idx + 1}
+                <div className="cut" />
+                <label htmlFor={`dietary_${idx}`} className="placeholder">
+                  Dietary Restrictions/Allergies
                 </label>
               </div>
-
-              <div className="ic2">
-                <Checkbox
-                  name={`attendance_${idx}`}
-                  className="form-input"
-                  label={`Will ${guest} be joining us?`}
-                  onChange={(event) => handleOnGuestChange(event, idx)}
-                  value={guestAttendance[idx]}
-                />
-              </div>
-
-              { guestAttendance[idx] && (
-                <div className="input-container ic2">
-                  <input 
-                    name={`dietary_${idx}`}
-                    className="input" type="text" placeholder=" " />
-                  <div className="cut" />
-                  <label 
-                    htmlFor={`dietary_${idx}`}
-                    className="placeholder">
-                    Dietary Restrictions/Allergies
-                  </label>
-                </div>
-              )}
-            </div>
-          ))
-
-          }
-
-        <hr />
-
-        { isChecked && (
-          <div className="input-container ic2 text-area">
-            <textarea
-              className="input text-area-input"
-              type="text"
-              placeholder=" "
-              name="special"
-            />
-            <div className="cut cut-long" />
-            <label htmlFor="special" className="placeholder">
-              What’re your favourite songs to dance to?
-            </label>
+            )}
           </div>
+        ))}
+
+      <hr style={{ marginTop: "40px" }} />
+
+      {isChecked && (
+        <div className="input-container ic2 text-area">
+          <textarea
+            className="input text-area-input"
+            type="text"
+            placeholder=" "
+            name="special"
+          />
+          <div className="cut cut-long" />
+          <label htmlFor="special" className="placeholder">
+            What’re your favourite songs to dance to?
+          </label>
+        </div>
       )}
 
       <div className="input-container ic2 text-area">

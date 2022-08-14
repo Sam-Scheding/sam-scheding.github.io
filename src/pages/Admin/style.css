@@ -2,7 +2,6 @@
   align-items: flex-start;
   display: flex;
   justify-content: center;
-  margin-top: 100px;
   width: 100vw;
 }
 
@@ -13,6 +12,7 @@
 }
 
 .content {
+  margin-top: 100px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
   font-size: 20pt;
 }
 .code-box {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 12pt;
   background-color: #f0f0f0;
   border: inset;
@@ -35,7 +35,6 @@
   text-align: left;
   width: 100%;
 }
-
 
 .link-container {
   background-color: darkgray;
