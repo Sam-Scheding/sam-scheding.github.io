@@ -46,7 +46,7 @@ const Home = () => {
   useEffect(() => {
     // Load queryString into localStorage on page load so it can be
     // used to populate the form later, even after route changes
-    let userInfo = JSON.stringify({});
+    let userInfo;
     const userURLParam = new URLSearchParams(window.location.search).get("u");
 
     if (userURLParam) {
@@ -54,7 +54,7 @@ const Home = () => {
       userInfo = window.atob(base64UserInfo);
     }
 
-    window.localStorage.setItem("userInfo", userInfo);
+    userInfo && window.localStorage.setItem("userInfo", userInfo);
   }, []);
 
   return (
