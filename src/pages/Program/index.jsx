@@ -3,8 +3,8 @@ import { afterdresscode } from "../../assets";
 
 const Program = () => {
   return (
-    <div class="contentWrapper program">
-      <div class="wrapper">
+    <div className="contentWrapper program">
+      <div className="wrapper">
         <h2>Program</h2>
         <h3>Date</h3>
         <p>Saturday 3 December 2022</p>
